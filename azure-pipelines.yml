@@ -1,0 +1,396 @@
+# This file was auto-generated.
+
+trigger:
+  branches:
+   include:
+     - master
+
+jobs:
+
+
+### recipes/v850-elf/14.01/Dockerfile gcc-rene/v850-elf:14.01 depends on eclipse/cpp_gcc eclipse/cpp_gcc
+  - job: "recipes__v850__elf__14__01__Dockerfile"
+    timeoutInMinutes: 0
+    pool:
+      vmImage: 'Ubuntu 16.04'
+    steps:
+
+    - task: Docker@1
+      displayName: 'Login to ACR.'
+      inputs:
+        command: login
+        dockerRegistryEndpoint: camino.azurecr.io
+        containerregistrytype: Container Registry
+
+    - script: |
+        set +e
+        docker pull camino.azurecr.io/gcc-rene/v850-elf:14.01
+        if [[ $? == 0 ]]; then
+          docker tag camino.azurecr.io/gcc-rene/v850-elf:14.01 gcc-rene/v850-elf:14.01
+        else
+          docker pull gcc-rene/v850-elf:14.01
+        fi
+        if [[ $? != 0 ]]; then
+          docker tag scratch gcc-rene/v850-elf:14.01
+        fi
+        docker pull camino.azurecr.io/eclipse/cpp_gcc
+        if [[ $? == 0 ]]; then
+          docker tag camino.azurecr.io/eclipse/cpp_gcc eclipse/cpp_gcc
+        else
+          docker pull eclipse/cpp_gcc
+        fi
+        if [[ $? != 0 ]]; then
+          docker tag scratch eclipse/cpp_gcc
+        fi
+        exit 0
+      continueOnError: true
+      failOnStderr: false
+      displayName: "Pulling cache. (errors will be ignored)"
+    - script: docker build -f recipes/v850-elf/14.01/Dockerfile --cache-from gcc-rene/v850-elf:14.01 -t camino.azurecr.io/gcc-rene/v850-elf:14.01 recipes/v850-elf/14.01
+      displayName: "Building camino.azurecr.io/gcc-rene/v850-elf:14.01"
+    - script: docker push camino.azurecr.io/gcc-rene/v850-elf:14.01
+      displayName: "Pushing camino.azurecr.io/gcc-rene/v850-elf:14.01"
+
+### recipes/v850-elf/latest/Dockerfile gcc-rene/v850-elf:latest depends on eclipse/cpp_gcc eclipse/cpp_gcc
+  - job: "recipes__v850__elf__latest__Dockerfile"
+    timeoutInMinutes: 0
+    pool:
+      vmImage: 'Ubuntu 16.04'
+    steps:
+
+    - task: Docker@1
+      displayName: 'Login to ACR.'
+      inputs:
+        command: login
+        dockerRegistryEndpoint: camino.azurecr.io
+        containerregistrytype: Container Registry
+
+    - script: |
+        set +e
+        docker pull camino.azurecr.io/gcc-rene/v850-elf:latest
+        if [[ $? == 0 ]]; then
+          docker tag camino.azurecr.io/gcc-rene/v850-elf:latest gcc-rene/v850-elf:latest
+        else
+          docker pull gcc-rene/v850-elf:latest
+        fi
+        if [[ $? != 0 ]]; then
+          docker tag scratch gcc-rene/v850-elf:latest
+        fi
+        docker pull camino.azurecr.io/eclipse/cpp_gcc
+        if [[ $? == 0 ]]; then
+          docker tag camino.azurecr.io/eclipse/cpp_gcc eclipse/cpp_gcc
+        else
+          docker pull eclipse/cpp_gcc
+        fi
+        if [[ $? != 0 ]]; then
+          docker tag scratch eclipse/cpp_gcc
+        fi
+        exit 0
+      continueOnError: true
+      failOnStderr: false
+      displayName: "Pulling cache. (errors will be ignored)"
+    - script: docker build -f recipes/v850-elf/latest/Dockerfile --cache-from gcc-rene/v850-elf:latest -t camino.azurecr.io/gcc-rene/v850-elf:latest recipes/v850-elf/latest
+      displayName: "Building camino.azurecr.io/gcc-rene/v850-elf:latest"
+    - script: docker push camino.azurecr.io/gcc-rene/v850-elf:latest
+      displayName: "Pushing camino.azurecr.io/gcc-rene/v850-elf:latest"
+
+### recipes/sh-elf/latest/Dockerfile gcc-rene/sh-elf:latest depends on eclipse/cpp_gcc eclipse/cpp_gcc
+  - job: "recipes__sh__elf__latest__Dockerfile"
+    timeoutInMinutes: 0
+    pool:
+      vmImage: 'Ubuntu 16.04'
+    steps:
+
+    - task: Docker@1
+      displayName: 'Login to ACR.'
+      inputs:
+        command: login
+        dockerRegistryEndpoint: camino.azurecr.io
+        containerregistrytype: Container Registry
+
+    - script: |
+        set +e
+        docker pull camino.azurecr.io/gcc-rene/sh-elf:latest
+        if [[ $? == 0 ]]; then
+          docker tag camino.azurecr.io/gcc-rene/sh-elf:latest gcc-rene/sh-elf:latest
+        else
+          docker pull gcc-rene/sh-elf:latest
+        fi
+        if [[ $? != 0 ]]; then
+          docker tag scratch gcc-rene/sh-elf:latest
+        fi
+        docker pull camino.azurecr.io/eclipse/cpp_gcc
+        if [[ $? == 0 ]]; then
+          docker tag camino.azurecr.io/eclipse/cpp_gcc eclipse/cpp_gcc
+        else
+          docker pull eclipse/cpp_gcc
+        fi
+        if [[ $? != 0 ]]; then
+          docker tag scratch eclipse/cpp_gcc
+        fi
+        exit 0
+      continueOnError: true
+      failOnStderr: false
+      displayName: "Pulling cache. (errors will be ignored)"
+    - script: docker build -f recipes/sh-elf/latest/Dockerfile --cache-from gcc-rene/sh-elf:latest -t camino.azurecr.io/gcc-rene/sh-elf:latest recipes/sh-elf/latest
+      displayName: "Building camino.azurecr.io/gcc-rene/sh-elf:latest"
+    - script: docker push camino.azurecr.io/gcc-rene/sh-elf:latest
+      displayName: "Pushing camino.azurecr.io/gcc-rene/sh-elf:latest"
+
+### recipes/sh-elf/13.01/Dockerfile gcc-rene/sh-elf:13.01 depends on eclipse/cpp_gcc eclipse/cpp_gcc
+  - job: "recipes__sh__elf__13__01__Dockerfile"
+    timeoutInMinutes: 0
+    pool:
+      vmImage: 'Ubuntu 16.04'
+    steps:
+
+    - task: Docker@1
+      displayName: 'Login to ACR.'
+      inputs:
+        command: login
+        dockerRegistryEndpoint: camino.azurecr.io
+        containerregistrytype: Container Registry
+
+    - script: |
+        set +e
+        docker pull camino.azurecr.io/gcc-rene/sh-elf:13.01
+        if [[ $? == 0 ]]; then
+          docker tag camino.azurecr.io/gcc-rene/sh-elf:13.01 gcc-rene/sh-elf:13.01
+        else
+          docker pull gcc-rene/sh-elf:13.01
+        fi
+        if [[ $? != 0 ]]; then
+          docker tag scratch gcc-rene/sh-elf:13.01
+        fi
+        docker pull camino.azurecr.io/eclipse/cpp_gcc
+        if [[ $? == 0 ]]; then
+          docker tag camino.azurecr.io/eclipse/cpp_gcc eclipse/cpp_gcc
+        else
+          docker pull eclipse/cpp_gcc
+        fi
+        if [[ $? != 0 ]]; then
+          docker tag scratch eclipse/cpp_gcc
+        fi
+        exit 0
+      continueOnError: true
+      failOnStderr: false
+      displayName: "Pulling cache. (errors will be ignored)"
+    - script: docker build -f recipes/sh-elf/13.01/Dockerfile --cache-from gcc-rene/sh-elf:13.01 -t camino.azurecr.io/gcc-rene/sh-elf:13.01 recipes/sh-elf/13.01
+      displayName: "Building camino.azurecr.io/gcc-rene/sh-elf:13.01"
+    - script: docker push camino.azurecr.io/gcc-rene/sh-elf:13.01
+      displayName: "Pushing camino.azurecr.io/gcc-rene/sh-elf:13.01"
+
+### recipes/arm-none/14.01/Dockerfile gcc-rene/arm-none:14.01 depends on eclipse/cpp_gcc eclipse/cpp_gcc
+  - job: "recipes__arm__none__14__01__Dockerfile"
+    timeoutInMinutes: 0
+    pool:
+      vmImage: 'Ubuntu 16.04'
+    steps:
+
+    - task: Docker@1
+      displayName: 'Login to ACR.'
+      inputs:
+        command: login
+        dockerRegistryEndpoint: camino.azurecr.io
+        containerregistrytype: Container Registry
+
+    - script: |
+        set +e
+        docker pull camino.azurecr.io/gcc-rene/arm-none:14.01
+        if [[ $? == 0 ]]; then
+          docker tag camino.azurecr.io/gcc-rene/arm-none:14.01 gcc-rene/arm-none:14.01
+        else
+          docker pull gcc-rene/arm-none:14.01
+        fi
+        if [[ $? != 0 ]]; then
+          docker tag scratch gcc-rene/arm-none:14.01
+        fi
+        docker pull camino.azurecr.io/eclipse/cpp_gcc
+        if [[ $? == 0 ]]; then
+          docker tag camino.azurecr.io/eclipse/cpp_gcc eclipse/cpp_gcc
+        else
+          docker pull eclipse/cpp_gcc
+        fi
+        if [[ $? != 0 ]]; then
+          docker tag scratch eclipse/cpp_gcc
+        fi
+        exit 0
+      continueOnError: true
+      failOnStderr: false
+      displayName: "Pulling cache. (errors will be ignored)"
+    - script: docker build -f recipes/arm-none/14.01/Dockerfile --cache-from gcc-rene/arm-none:14.01 -t camino.azurecr.io/gcc-rene/arm-none:14.01 recipes/arm-none/14.01
+      displayName: "Building camino.azurecr.io/gcc-rene/arm-none:14.01"
+    - script: docker push camino.azurecr.io/gcc-rene/arm-none:14.01
+      displayName: "Pushing camino.azurecr.io/gcc-rene/arm-none:14.01"
+
+### recipes/arm-none/14.02/Dockerfile gcc-rene/arm-none:14.02 depends on eclipse/cpp_gcc eclipse/cpp_gcc
+  - job: "recipes__arm__none__14__02__Dockerfile"
+    timeoutInMinutes: 0
+    pool:
+      vmImage: 'Ubuntu 16.04'
+    steps:
+
+    - task: Docker@1
+      displayName: 'Login to ACR.'
+      inputs:
+        command: login
+        dockerRegistryEndpoint: camino.azurecr.io
+        containerregistrytype: Container Registry
+
+    - script: |
+        set +e
+        docker pull camino.azurecr.io/gcc-rene/arm-none:14.02
+        if [[ $? == 0 ]]; then
+          docker tag camino.azurecr.io/gcc-rene/arm-none:14.02 gcc-rene/arm-none:14.02
+        else
+          docker pull gcc-rene/arm-none:14.02
+        fi
+        if [[ $? != 0 ]]; then
+          docker tag scratch gcc-rene/arm-none:14.02
+        fi
+        docker pull camino.azurecr.io/eclipse/cpp_gcc
+        if [[ $? == 0 ]]; then
+          docker tag camino.azurecr.io/eclipse/cpp_gcc eclipse/cpp_gcc
+        else
+          docker pull eclipse/cpp_gcc
+        fi
+        if [[ $? != 0 ]]; then
+          docker tag scratch eclipse/cpp_gcc
+        fi
+        exit 0
+      continueOnError: true
+      failOnStderr: false
+      displayName: "Pulling cache. (errors will be ignored)"
+    - script: docker build -f recipes/arm-none/14.02/Dockerfile --cache-from gcc-rene/arm-none:14.02 -t camino.azurecr.io/gcc-rene/arm-none:14.02 recipes/arm-none/14.02
+      displayName: "Building camino.azurecr.io/gcc-rene/arm-none:14.02"
+    - script: docker push camino.azurecr.io/gcc-rene/arm-none:14.02
+      displayName: "Pushing camino.azurecr.io/gcc-rene/arm-none:14.02"
+
+### recipes/arm-none/15.01/Dockerfile gcc-rene/arm-none:15.01 depends on eclipse/cpp_gcc eclipse/cpp_gcc
+  - job: "recipes__arm__none__15__01__Dockerfile"
+    timeoutInMinutes: 0
+    pool:
+      vmImage: 'Ubuntu 16.04'
+    steps:
+
+    - task: Docker@1
+      displayName: 'Login to ACR.'
+      inputs:
+        command: login
+        dockerRegistryEndpoint: camino.azurecr.io
+        containerregistrytype: Container Registry
+
+    - script: |
+        set +e
+        docker pull camino.azurecr.io/gcc-rene/arm-none:15.01
+        if [[ $? == 0 ]]; then
+          docker tag camino.azurecr.io/gcc-rene/arm-none:15.01 gcc-rene/arm-none:15.01
+        else
+          docker pull gcc-rene/arm-none:15.01
+        fi
+        if [[ $? != 0 ]]; then
+          docker tag scratch gcc-rene/arm-none:15.01
+        fi
+        docker pull camino.azurecr.io/eclipse/cpp_gcc
+        if [[ $? == 0 ]]; then
+          docker tag camino.azurecr.io/eclipse/cpp_gcc eclipse/cpp_gcc
+        else
+          docker pull eclipse/cpp_gcc
+        fi
+        if [[ $? != 0 ]]; then
+          docker tag scratch eclipse/cpp_gcc
+        fi
+        exit 0
+      continueOnError: true
+      failOnStderr: false
+      displayName: "Pulling cache. (errors will be ignored)"
+    - script: docker build -f recipes/arm-none/15.01/Dockerfile --cache-from gcc-rene/arm-none:15.01 -t camino.azurecr.io/gcc-rene/arm-none:15.01 recipes/arm-none/15.01
+      displayName: "Building camino.azurecr.io/gcc-rene/arm-none:15.01"
+    - script: docker push camino.azurecr.io/gcc-rene/arm-none:15.01
+      displayName: "Pushing camino.azurecr.io/gcc-rene/arm-none:15.01"
+
+### recipes/arm-none/16.01/Dockerfile gcc-rene/arm-none:16.01 depends on eclipse/cpp_gcc eclipse/cpp_gcc
+  - job: "recipes__arm__none__16__01__Dockerfile"
+    timeoutInMinutes: 0
+    pool:
+      vmImage: 'Ubuntu 16.04'
+    steps:
+
+    - task: Docker@1
+      displayName: 'Login to ACR.'
+      inputs:
+        command: login
+        dockerRegistryEndpoint: camino.azurecr.io
+        containerregistrytype: Container Registry
+
+    - script: |
+        set +e
+        docker pull camino.azurecr.io/gcc-rene/arm-none:16.01
+        if [[ $? == 0 ]]; then
+          docker tag camino.azurecr.io/gcc-rene/arm-none:16.01 gcc-rene/arm-none:16.01
+        else
+          docker pull gcc-rene/arm-none:16.01
+        fi
+        if [[ $? != 0 ]]; then
+          docker tag scratch gcc-rene/arm-none:16.01
+        fi
+        docker pull camino.azurecr.io/eclipse/cpp_gcc
+        if [[ $? == 0 ]]; then
+          docker tag camino.azurecr.io/eclipse/cpp_gcc eclipse/cpp_gcc
+        else
+          docker pull eclipse/cpp_gcc
+        fi
+        if [[ $? != 0 ]]; then
+          docker tag scratch eclipse/cpp_gcc
+        fi
+        exit 0
+      continueOnError: true
+      failOnStderr: false
+      displayName: "Pulling cache. (errors will be ignored)"
+    - script: docker build -f recipes/arm-none/16.01/Dockerfile --cache-from gcc-rene/arm-none:16.01 -t camino.azurecr.io/gcc-rene/arm-none:16.01 recipes/arm-none/16.01
+      displayName: "Building camino.azurecr.io/gcc-rene/arm-none:16.01"
+    - script: docker push camino.azurecr.io/gcc-rene/arm-none:16.01
+      displayName: "Pushing camino.azurecr.io/gcc-rene/arm-none:16.01"
+
+### recipes/arm-none/latest/Dockerfile gcc-rene/arm-none:latest depends on eclipse/cpp_gcc eclipse/cpp_gcc
+  - job: "recipes__arm__none__latest__Dockerfile"
+    timeoutInMinutes: 0
+    pool:
+      vmImage: 'Ubuntu 16.04'
+    steps:
+
+    - task: Docker@1
+      displayName: 'Login to ACR.'
+      inputs:
+        command: login
+        dockerRegistryEndpoint: camino.azurecr.io
+        containerregistrytype: Container Registry
+
+    - script: |
+        set +e
+        docker pull camino.azurecr.io/gcc-rene/arm-none:latest
+        if [[ $? == 0 ]]; then
+          docker tag camino.azurecr.io/gcc-rene/arm-none:latest gcc-rene/arm-none:latest
+        else
+          docker pull gcc-rene/arm-none:latest
+        fi
+        if [[ $? != 0 ]]; then
+          docker tag scratch gcc-rene/arm-none:latest
+        fi
+        docker pull camino.azurecr.io/eclipse/cpp_gcc
+        if [[ $? == 0 ]]; then
+          docker tag camino.azurecr.io/eclipse/cpp_gcc eclipse/cpp_gcc
+        else
+          docker pull eclipse/cpp_gcc
+        fi
+        if [[ $? != 0 ]]; then
+          docker tag scratch eclipse/cpp_gcc
+        fi
+        exit 0
+      continueOnError: true
+      failOnStderr: false
+      displayName: "Pulling cache. (errors will be ignored)"
+    - script: docker build -f recipes/arm-none/latest/Dockerfile --cache-from gcc-rene/arm-none:latest -t camino.azurecr.io/gcc-rene/arm-none:latest recipes/arm-none/latest
+      displayName: "Building camino.azurecr.io/gcc-rene/arm-none:latest"
+    - script: docker push camino.azurecr.io/gcc-rene/arm-none:latest
+      displayName: "Pushing camino.azurecr.io/gcc-rene/arm-none:latest"
