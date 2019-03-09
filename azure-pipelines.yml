@@ -1,0 +1,45 @@
+jobs:
+
+
+### recipes/v850-elf/14.01/Dockerfile gcc-rene-partial/v850-elf:14.01 depends on eclipse/cpp_gcc eclipse/cpp_gcc
+  - job: "recipes__v850__elf__14__01__Dockerfile"
+    timeoutInMinutes: 0
+    pool:
+      vmImage: 'Ubuntu 16.04'
+    steps:
+
+    - task: Docker@1
+      displayName: 'Login to ACR.'
+      inputs:
+        command: login
+        dockerRegistryEndpoint: camino.azurecr.io
+        containerregistrytype: Container Registry
+
+    - script: |
+        set +e
+        docker pull camino.azurecr.io/gcc-rene-partial/v850-elf:14.01
+        if [[ $? == 0 ]]; then
+          docker tag camino.azurecr.io/gcc-rene-partial/v850-elf:14.01 gcc-rene-partial/v850-elf:14.01
+        else
+          docker pull gcc-rene-partial/v850-elf:14.01
+        fi
+        if [[ $? != 0 ]]; then
+          docker tag scratch gcc-rene-partial/v850-elf:14.01
+        fi
+        docker pull camino.azurecr.io/eclipse/cpp_gcc
+        if [[ $? == 0 ]]; then
+          docker tag camino.azurecr.io/eclipse/cpp_gcc eclipse/cpp_gcc
+        else
+          docker pull eclipse/cpp_gcc
+        fi
+        if [[ $? != 0 ]]; then
+          docker tag scratch eclipse/cpp_gcc
+        fi
+        exit 0
+      continueOnError: true
+      failOnStderr: false
+      displayName: "Pulling cache. (errors will be ignored)"
+    - script: docker build -f recipes/v850-elf/14.01/Dockerfile --cache-from gcc-rene-partial/v850-elf:14.01 -t camino.azurecr.io/gcc-rene-partial/v850-elf:14.01 recipes/v850-elf/14.01
+      displayName: "Building camino.azurecr.io/gcc-rene-partial/v850-elf:14.01"
+    - script: docker push camino.azurecr.io/gcc-rene-partial/v850-elf:14.01
+      displayName: "Pushing camino.azurecr.io/gcc-rene-partial/v850-elf:14.01"
