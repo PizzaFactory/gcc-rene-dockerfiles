@@ -1,0 +1,15 @@
+--- branches/gcc-4_7-branch/gcc/ChangeLog	2012/09/21 09:19:39	191604
++++ branches/gcc-4_7-branch/gcc/ChangeLog	2012/09/21 10:08:35	191605
+@@ -1,3 +1,12 @@
++2012-09-21  Richard Guenther  <rguenther@suse.de>
++
++	PR middle-end/54638
++	Backport from mainline
++	2012-04-19  Richard Guenther  <rguenther@suse.de>
++
++	* ira-int.h (ira_allocno_object_iter_cond): Avoid out-of-bound
++	array access.
++
+ 2012-09-20  Joseph Myers  <joseph@codesourcery.com>
+ 
+ 	PR c/54552
