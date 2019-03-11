@@ -1,4 +1,4 @@
-FROM camino.azurecr.io/gcc-rene-partial/v850-elf:14.01 as partial
+FROM gcc-rene-partial/v850-elf:14.01 as partial
 
 FROM eclipse/cpp_gcc
 

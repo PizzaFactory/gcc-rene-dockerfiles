@@ -1,4 +1,4 @@
-FROM camino.azurecr.io/gcc-rene-partial/arm-none:14.01 as partial
+FROM gcc-rene-partial/arm-none:14.01 as partial
 
 FROM eclipse/cpp_gcc
 
