@@ -4,6 +4,13 @@ PRIVATE_REPO=${PRIVATE_REPO:-}
 ORGANIZATION=gcc-rene-partial
 
 cat <<__HEADER
+# This file was auto-generated.
+
+trigger:
+  branches:
+   include:
+     - partial
+
 jobs:
 
 __HEADER

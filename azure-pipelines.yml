@@ -1,3 +1,10 @@
+# This file was auto-generated.
+
+trigger:
+  branches:
+   include:
+     - partial
+
 jobs:
 
 
