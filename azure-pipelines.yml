@@ -24,6 +24,10 @@ jobs:
 
     - script: |
         set +e
+        docker pull camino.azurecr.io/gcc-rene-partial/v850-elf:14.01
+        if [[ $? == 0 ]]; then
+          docker tag camino.azurecr.io/gcc-rene-partial/v850-elf:14.01 gcc-rene-partial/v850-elf:14.01
+        fi
         docker pull camino.azurecr.io/gcc-rene/v850-elf:14.01
         if [[ $? == 0 ]]; then
           docker tag camino.azurecr.io/gcc-rene/v850-elf:14.01 gcc-rene/v850-elf:14.01
@@ -67,6 +71,10 @@ jobs:
 
     - script: |
         set +e
+        docker pull camino.azurecr.io/gcc-rene-partial/v850-elf:14.01
+        if [[ $? == 0 ]]; then
+          docker tag camino.azurecr.io/gcc-rene-partial/v850-elf:14.01 gcc-rene-partial/v850-elf:14.01
+        fi
         docker pull camino.azurecr.io/gcc-rene/v850-elf:latest
         if [[ $? == 0 ]]; then
           docker tag camino.azurecr.io/gcc-rene/v850-elf:latest gcc-rene/v850-elf:latest
@@ -110,6 +118,10 @@ jobs:
 
     - script: |
         set +e
+        docker pull camino.azurecr.io/gcc-rene-partial/v850-elf:14.01
+        if [[ $? == 0 ]]; then
+          docker tag camino.azurecr.io/gcc-rene-partial/v850-elf:14.01 gcc-rene-partial/v850-elf:14.01
+        fi
         docker pull camino.azurecr.io/gcc-rene/sh-elf:latest
         if [[ $? == 0 ]]; then
           docker tag camino.azurecr.io/gcc-rene/sh-elf:latest gcc-rene/sh-elf:latest
@@ -153,6 +165,10 @@ jobs:
 
     - script: |
         set +e
+        docker pull camino.azurecr.io/gcc-rene-partial/sh-elf:13.01
+        if [[ $? == 0 ]]; then
+          docker tag camino.azurecr.io/gcc-rene-partial/sh-elf:13.01 gcc-rene-partial/sh-elf:13.01
+        fi
         docker pull camino.azurecr.io/gcc-rene/sh-elf:13.01
         if [[ $? == 0 ]]; then
           docker tag camino.azurecr.io/gcc-rene/sh-elf:13.01 gcc-rene/sh-elf:13.01
@@ -196,6 +212,10 @@ jobs:
 
     - script: |
         set +e
+        docker pull camino.azurecr.io/gcc-rene-partial/arm-none:14.01
+        if [[ $? == 0 ]]; then
+          docker tag camino.azurecr.io/gcc-rene-partial/arm-none:14.01 gcc-rene-partial/arm-none:14.01
+        fi
         docker pull camino.azurecr.io/gcc-rene/arm-none:14.01
         if [[ $? == 0 ]]; then
           docker tag camino.azurecr.io/gcc-rene/arm-none:14.01 gcc-rene/arm-none:14.01
@@ -239,6 +259,10 @@ jobs:
 
     - script: |
         set +e
+        docker pull camino.azurecr.io/gcc-rene-partial/arm-none:14.02
+        if [[ $? == 0 ]]; then
+          docker tag camino.azurecr.io/gcc-rene-partial/arm-none:14.02 gcc-rene-partial/arm-none:14.02
+        fi
         docker pull camino.azurecr.io/gcc-rene/arm-none:14.02
         if [[ $? == 0 ]]; then
           docker tag camino.azurecr.io/gcc-rene/arm-none:14.02 gcc-rene/arm-none:14.02
@@ -282,6 +306,10 @@ jobs:
 
     - script: |
         set +e
+        docker pull camino.azurecr.io/gcc-rene-partial/arm-none:15.01
+        if [[ $? == 0 ]]; then
+          docker tag camino.azurecr.io/gcc-rene-partial/arm-none:15.01 gcc-rene-partial/arm-none:15.01
+        fi
         docker pull camino.azurecr.io/gcc-rene/arm-none:15.01
         if [[ $? == 0 ]]; then
           docker tag camino.azurecr.io/gcc-rene/arm-none:15.01 gcc-rene/arm-none:15.01
@@ -325,6 +353,10 @@ jobs:
 
     - script: |
         set +e
+        docker pull camino.azurecr.io/gcc-rene-partial/arm-none:16.01
+        if [[ $? == 0 ]]; then
+          docker tag camino.azurecr.io/gcc-rene-partial/arm-none:16.01 gcc-rene-partial/arm-none:16.01
+        fi
         docker pull camino.azurecr.io/gcc-rene/arm-none:16.01
         if [[ $? == 0 ]]; then
           docker tag camino.azurecr.io/gcc-rene/arm-none:16.01 gcc-rene/arm-none:16.01
@@ -368,6 +400,10 @@ jobs:
 
     - script: |
         set +e
+        docker pull camino.azurecr.io/gcc-rene-partial/v850-elf:14.01
+        if [[ $? == 0 ]]; then
+          docker tag camino.azurecr.io/gcc-rene-partial/v850-elf:14.01 gcc-rene-partial/v850-elf:14.01
+        fi
         docker pull camino.azurecr.io/gcc-rene/arm-none:latest
         if [[ $? == 0 ]]; then
           docker tag camino.azurecr.io/gcc-rene/arm-none:latest gcc-rene/arm-none:latest
